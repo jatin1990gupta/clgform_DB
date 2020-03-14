@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">ORIENTAL</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string-array name="apply_for">
+        <item>--Please Select--</item>
+        <item>B.Tech</item>
+        <item>M.tech</item>
+        <item>B.pharma</item>
+        <item>M.pharma</item>
+    </string-array>
+
+    <string-array name="f_occupation">
+        <item>--Please Select--</item>
+        <item>Business</item>
+        <item>Serviceman</item>
+        <item>Farmer</item>
+        <item>Politician</item>
+        <item>Defence</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="board">
+        <item>--Please Select--</item>
+        <item>CBSE</item>
+        <item>State Board</item>
+    </string-array>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_storage">storage</string>
+    <string name="title_activity_submission">submission</string>
+    <string name="title_activity_app_front">app_front</string>
+    <string name="mandatory">*</string>
+    <string name="req">* Mandatory Fields</string>
+
+    <string name="about_clg_wel">
+        Welcome!</string>
+    <string name="about_clg_1">
+            Offering comprehensively trained, innovative engineers and enterprising, competent professionals.</string>
+    <string name="about_clg_2"> Oriental College of Technology is a centre of opportunity not only for students
+            and also for the academicians and researchers who want to build a successful career.
+            Recognized by AICTE, New Delhi its programs are affiliated to RGPV, Madhya Pradesh.</string>
+    <string name="title_activity_splash_screen">splash_screen</string>
+    <string name="title_activity_login">login</string>
+    <string name="title_activity_log">log</string>
+    <string name="title_activity_forgot">forgot</string>
+    <string name="title_activity_options">options</string>
+
+</resources>

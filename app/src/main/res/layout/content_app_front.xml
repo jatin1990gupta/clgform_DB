@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/oriental_img"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="20dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="151dp"
+                    android:layout_height="115dp"
+                    android:src="@drawable/oct_logo" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="ORIENTAL"
+                        android:textSize="35dp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:typeface="serif"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="COLLEGE OF TECHNOLOGY"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:typeface="sans"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="20dp"
+                android:padding="8dp"
+                android:background="@drawable/app_front_back">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/about_clg_wel"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/off_white"
+                    android:layout_marginBottom="20dp"
+                    android:typeface="serif"
+                    android:gravity="center_horizontal" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="22dp"
+                    android:textColor="@color/off_white"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/about_clg_1"
+                    android:typeface="sans"
+                    android:gravity="center_horizontal" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:textColor="@color/off_white"
+                    android:layout_marginBottom="20dp"
+                    android:textAlignment="center"
+                    android:text="@string/about_clg_2"
+                    android:typeface="sans"
+                    android:gravity="center_horizontal" />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:background="@drawable/knwbtn"
+                    android:text="KNOW MORE"
+                    android:textSize="16dp"
+                    android:textColor="@color/light_black"
+                    android:id="@+id/knwMoreBtn"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:layout_weight="0.5"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="5dp"
+                        android:padding="8dp"
+                        android:background="@drawable/app_front_back">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ADMISSIONS 2020"
+                            android:textStyle="bold"
+                            android:textSize="12dp"
+                            android:padding="5dp"
+                            android:textColor="@color/off_white"/>
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/knwbtn"
+                            android:textColor="@color/light_black"
+                            android:layout_margin="5dp"
+                            android:textStyle="bold"
+                            android:textSize="12dp"
+                            android:text="FILL FORM"
+                            android:id="@+id/fillBtn"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:layout_weight="0.5"
+                        android:orientation="vertical"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="5dp"
+                        android:padding="8dp"
+                        android:background="@drawable/app_front_back">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="12dp"
+                            android:textStyle="bold"
+                            android:padding="5dp"
+                            android:textColor="@color/off_white"
+                            android:text="FOR COLLEGE PURPOSE"/>
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/knwbtn"
+                            android:textColor="@color/light_black"
+                            android:layout_margin="5dp"
+                            android:textSize="12dp"
+                            android:textStyle="bold"
+                            android:text="FORMS DATA"
+                            android:id="@+id/clgBtn"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_margin="20dp"
+                    android:paddingTop="10dp"
+                    android:background="@drawable/app_front_back">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="CONTACT US"
+                            android:textStyle="bold"
+                            android:textSize="20dp"
+                            android:padding="5dp"
+                            android:textColor="@color/off_white"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+                            <ImageButton
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:padding="13dp"
+                                android:scaleType="fitCenter"
+                                android:background="@drawable/knwbtn"
+                                android:layout_margin="20dp"
+                                android:src="@drawable/call"
+                                android:id="@+id/cntctBtn">
+                            </ImageButton>
+                            <ImageButton
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:padding="10dp"
+                                android:layout_margin="20dp"
+                                android:scaleType="fitCenter"
+                                android:background="@drawable/knwbtn"
+                                android:src="@drawable/email"
+                                android:id="@+id/emailBtn">
+                            </ImageButton>
+                            <ImageButton
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:padding="13dp"
+                                android:layout_margin="20dp"
+                                android:scaleType="fitCenter"
+                                android:background="@drawable/knwbtn"
+                                android:src="@drawable/location"
+                                android:id="@+id/locateBtn">
+                            </ImageButton>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

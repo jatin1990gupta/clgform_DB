@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/back"
+        android:gravity="center"
+        android:onClick="abcd">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="138dp"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:text="Your details have been submitted Successfully."
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="113dp"
+            android:src="@drawable/ticke"></ImageView>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

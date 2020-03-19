@@ -15,9 +15,25 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".options"
-            android:label="@string/title_activity_options"
+            android:name=".delete_user"
+            android:label="@string/title_activity_delete_user"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".admin_options"
+            android:label="@string/title_activity_admin_options"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".admin_login"
+            android:label="@string/title_activity_admin_login"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".signup"
+            android:label="@string/title_activity_signup"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".delete_records"
+            android:label="@string/title_activity_options"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".login"
             android:label="@string/title_activity_login"
@@ -35,10 +51,6 @@
         <activity
             android:name=".app_front"
             android:label="@string/title_activity_app_front"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".submission"
-            android:label="@string/title_activity_submission"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".storage"

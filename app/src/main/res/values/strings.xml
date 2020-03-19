@@ -51,5 +51,9 @@
     <string name="title_activity_log">log</string>
     <string name="title_activity_forgot">forgot</string>
     <string name="title_activity_options">options</string>
+    <string name="title_activity_signup">signup</string>
+    <string name="title_activity_admin_login">admin_login</string>
+    <string name="title_activity_admin_options">admin_options</string>
+    <string name="title_activity_delete_user">delete_user</string>
 
 </resources>

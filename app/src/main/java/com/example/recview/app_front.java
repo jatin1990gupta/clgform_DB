@@ -7,14 +7,16 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class app_front extends AppCompatActivity {
 
-    Button knwMore, fillForm, clgBtn;
+    Button knwMore;
     ImageButton contact, email, location;
+    TextView  fillForm, employee, admin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +24,9 @@ public class app_front extends AppCompatActivity {
         setContentView(R.layout.activity_app_front);
 
         knwMore = (Button) findViewById(R.id.knwMoreBtn);
-        fillForm = (Button) findViewById(R.id.fillBtn);
-        clgBtn = (Button) findViewById(R.id.clgBtn);
+        fillForm = (TextView) findViewById(R.id.fillBtn);
+        employee = (TextView) findViewById(R.id.employee);
+        admin = (TextView) findViewById(R.id.admin);
 
         contact = (ImageButton) findViewById(R.id.cntctBtn);
         email = (ImageButton) findViewById(R.id.emailBtn);
@@ -80,10 +83,18 @@ public class app_front extends AppCompatActivity {
             }
         });
 
-        clgBtn.setOnClickListener(new View.OnClickListener() {
+        employee.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(app_front.this,login.class);
+                startActivity(i);
+            }
+        });
+
+        admin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(app_front.this,admin_login.class);
                 startActivity(i);
             }
         });

@@ -1,32 +1,29 @@
 package com.example.recview;
 
-import android.database.Cursor;
+import android.content.Intent;
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import android.view.View;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.View;
-import android.widget.Toast;
-
 import java.util.ArrayList;
-import java.util.List;
 
 public class storage extends AppCompatActivity {
 
     RecyclerView rcv;
     DBHelper myDB;
     ArrayList<data> ilist;
+    ImageButton delete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_storage);
+
+        delete = (ImageButton)findViewById(R.id.deleteRecordsBtn);
 
         ilist = new ArrayList<data>();
         myDB = new DBHelper(this);
@@ -37,5 +34,15 @@ public class storage extends AppCompatActivity {
         rcv.setAdapter(dadapter);
         rcv.setLayoutManager(new LinearLayoutManager(this));
         dadapter.notifyDataSetChanged();
+
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(storage.this, delete_records.class);
+                startActivity(i);
+            }
+        });
     }
+
+
 }

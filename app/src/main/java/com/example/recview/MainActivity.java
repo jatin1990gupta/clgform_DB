@@ -117,23 +117,28 @@ public class MainActivity extends AppCompatActivity {
                         && address.length()!=0 && prog!=null){
 
                     if(mob.equals(cmob) && mob.length()==10) {
-                        AddData(name, gender, dob, fname, focc, board10, roll10, per10, board12, roll12, per12, mob,
-                                cmob, email, address, prog, time);
 
-                        anameEV.setText("");
-                        dobEV.setText("");
-                        fnameEV.setText("");
-                        roll10EV.setText("");
-                        per10EV.setText("");
-                        roll12EV.setText("");
-                        per12EV.setText("");
-                        mobEV.setText("");
-                        cmobEV.setText("");
-                        emailEV.setText("");
-                        addEV.setText("");
+                        if (Integer.parseInt(per10) > 100 || Integer.parseInt(per12) > 100) {
+                            Toast.makeText(MainActivity.this, "Percentage Can't be more than 100.", Toast.LENGTH_LONG).show();
+                        } else {
+                            AddData(name, gender, dob, fname, focc, board10, roll10, per10, board12, roll12, per12, mob,
+                                    cmob, email, address, prog, time);
 
-                        Intent i = new Intent(MainActivity.this, submission.class);
-                        startActivity(i);
+                            anameEV.setText("");
+                            dobEV.setText("");
+                            fnameEV.setText("");
+                            roll10EV.setText("");
+                            per10EV.setText("");
+                            roll12EV.setText("");
+                            per12EV.setText("");
+                            mobEV.setText("");
+                            cmobEV.setText("");
+                            emailEV.setText("");
+                            addEV.setText("");
+
+                            Intent i = new Intent(MainActivity.this, app_front.class);
+                            startActivity(i);
+                        }
                     } else {
                         Toast.makeText(MainActivity.this,"Please confirm the entered mobile number (10 digits).", Toast.LENGTH_LONG).show();
                     }

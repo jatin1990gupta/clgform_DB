@@ -10,6 +10,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,7 +19,8 @@ public class login extends AppCompatActivity {
     EditText user, pass;
     Button loginBtn;
     CheckBox showpassCB;
-    TextView forgotTV;
+    TextView signup;
+    DBHelper myDB = new DBHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,7 @@ public class login extends AppCompatActivity {
         pass = (EditText)findViewById(R.id.password);
         loginBtn = (Button)findViewById(R.id.loginBtn);
         showpassCB = (CheckBox)findViewById(R.id.showpassCB);
+        signup = (TextView)findViewById(R.id.signupTV);
 
         showpassCB.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -48,17 +51,26 @@ public class login extends AppCompatActivity {
                 String username = user.getText().toString();
                 String password = pass.getText().toString();
 
-                if(username.equals("abc")){
+                String spass = myDB.searchPass(username);
 
-                    if(password.equals("abc123")) {
-                        Intent i = new Intent(login.this, options.class);
-                        startActivity(i);
-                    } else {
-                        pass.setError("Wrong Password");
-                    }
+                if(spass.equals(password)){
+
+                    user.setText("");
+                    pass.setText("");
+
+                    Intent i = new Intent(login.this,storage.class);
+                    startActivity(i);
                 } else {
-                    user.setError("Check Usename");
+                    Toast.makeText(login.this,"Check Username or Password.", Toast.LENGTH_LONG).show();
                 }
+            }
+        });
+
+        signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(login.this, com.example.recview.signup.class);
+                startActivity(i);
             }
         });
     }

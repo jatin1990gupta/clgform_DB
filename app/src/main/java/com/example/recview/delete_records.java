@@ -9,30 +9,21 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class options extends AppCompatActivity {
-    Button view, delete;
+public class delete_records extends AppCompatActivity {
+    Button delete;
     EditText delName;
     DBHelper myDB = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_options);
+        setContentView(R.layout.content_delete_records);
 
         myDB = new DBHelper(this);
 
         delete=(Button)findViewById(R.id.deleteBtn);
-        view=(Button)findViewById(R.id.viewBtn);
-        delName = (EditText)findViewById(R.id.delNameEV);
+        delName=(EditText)findViewById(R.id.delnameEV);
 
-
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(options.this,storage.class);
-                startActivity(i);
-            }
-        });
 
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,8 +34,10 @@ public class options extends AppCompatActivity {
                 } else {
                     deletion(name);
                     delName.setText("");
+                    Intent i = new Intent(delete_records.this,storage.class);
+                    startActivity(i);
                 }
-                }
+            }
         });
     }
 

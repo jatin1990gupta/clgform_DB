@@ -12,6 +12,7 @@ import java.util.ArrayList;
 public class DBHelper extends SQLiteOpenHelper {
 
     public static final String DB_NAME = "details.db";
+
     public static final String TABLE_NAME = "details";
     public static final String col1 = "ID";
     public static final String col2 = "NAME";
@@ -30,6 +31,11 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String col15 = "ADDRESS";
     public static final String col16 = "PROGRAMME";
     public static final String col17 = "TIME";
+
+    public static final String TABLE_USER = "user_details";
+    public static final String USERNAM_COL = "username";
+    public static final String EMAIL_COL = "email";
+    public static final String PASSWORD_COL = "password";
 
     public DBHelper(Context context) {
         super(context, DB_NAME, null, 2);
@@ -54,7 +60,14 @@ public class DBHelper extends SQLiteOpenHelper {
                 col15+" TEXT, " +
                 col16+" TEXT, " +
                 col17+" TEXT )";
+
+        String login = "CREATE TABLE " + TABLE_USER + "( "+
+                USERNAM_COL+" TEXT, " +
+                EMAIL_COL+" TEXT, " +
+                PASSWORD_COL+" TEXT )";
+
         db.execSQL(create_table);
+        db.execSQL(login);
 
     }
 
@@ -94,12 +107,27 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
+    public boolean add_loginData(String username, String email,  String password) {
+        SQLiteDatabase datab = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(USERNAM_COL, username);
+        cv.put(EMAIL_COL, email);
+        cv.put(PASSWORD_COL, password);
+
+        long result = datab.insert(TABLE_USER, null, cv);
+
+        if (result == -1){
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     public ArrayList<data> getListContents(){
         ArrayList<data> datalist = new ArrayList<data>();
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor data = db.rawQuery("SELECT * FROM "+ TABLE_NAME, null);
-
         try {
+            Cursor data = db.rawQuery("SELECT * FROM "+ TABLE_NAME, null);
             data.moveToLast();
             do {
                 String name = data.getString(data.getColumnIndex(col2));
@@ -130,6 +158,80 @@ public class DBHelper extends SQLiteOpenHelper {
         return datalist;
     }
 
+    public ArrayList<user_data> getUserData(){
+        ArrayList<user_data> datalist = new ArrayList<user_data>();
+        SQLiteDatabase datab = this.getReadableDatabase();
+        try {
+            Cursor c = datab.rawQuery("SELECT * FROM "+ TABLE_USER, null);
+            c.moveToFirst();
+            do {
+                String username = c.getString(c.getColumnIndex(USERNAM_COL));
+                String email = c.getString(c.getColumnIndex(EMAIL_COL));
+                String password = c.getString(c.getColumnIndex(PASSWORD_COL));
+
+                user_data dts = new user_data( username, email, password);
+                datalist.add(dts);
+            } while (c.moveToNext());
+        }catch(Exception ex){
+            Log.e("NO RECORDS FOUND.",ex.toString());
+        }
+        return datalist;
+    }
+
+    public String searchPass(String user){
+
+        SQLiteDatabase datab = this.getReadableDatabase();
+        Cursor c = datab.rawQuery("SELECT username, password from user_details", null);
+        String a, b;
+        b = "not found";
+
+        if(c.moveToFirst()){
+            do{
+                a = c.getString(0);
+
+                if(a.equals(user)){
+
+                    b = c.getString(1);
+                    break;
+                }
+            }while(c.moveToNext());
+        }
+        return b;
+    }
+
+    public boolean chkUser(String user){
+        SQLiteDatabase datab = this.getReadableDatabase();
+        Cursor c = datab.rawQuery("SELECT username from user_details", null);
+        int a = 0;
+        if(c.moveToFirst()){
+            do{
+                if(user.equals(c.getString(0))){
+                    a++;
+                }
+            }while(c.moveToNext());
+        }
+
+        if(a>0){
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+
+    public boolean delete_user(String name){
+
+        try {
+            SQLiteDatabase db = getWritableDatabase();
+            db.execSQL("DELETE FROM " + "user_details " + "WHERE " + USERNAM_COL + "=\"" + name + "\";");
+
+        } catch (Exception e){
+            Log.e("Error","Unsuccessfull.");
+            return  false;
+        }return  true;
+    }
+
+
     public boolean delete_data(String name){
 
         try {
@@ -139,7 +241,6 @@ public class DBHelper extends SQLiteOpenHelper {
         } catch (Exception e){
             Log.e("Error","Unsuccessfull.");
             return  false;
-
         }return  true;
     }
 }
